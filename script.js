@@ -41,8 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function fetchSleeperProjections() {
-        // NOTE: 'week=1' can be dynamic for the current week in a real season
-        const response = await fetch('https://api.sleeper.app/v1/projections/nfl/regular/2025/1');
+        // NOTE: Using 2024 data as 2025 is not yet available.
+        // CHANGE THIS BACK TO 2025 WHEN THE SEASON STARTS.
+        const response = await fetch('https://api.sleeper.app/v1/projections/nfl/regular/2024/1');
         if (!response.ok) throw new Error("Failed to fetch Sleeper projections");
         return await response.json();
     }
@@ -64,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 team: playerInfo.team || 'FA',
                 projection: parseFloat(customProjection.toFixed(2))
             };
-        }).filter(p => p && p.projection > 0); // Filter out nulls and zero-projection players
+        }).filter(p => p && p.projection > 0 && p.name); // Filter out nulls, zero-projection, and nameless players
         
         // Sort by projection descending by default
         return relevantPlayers.sort((a, b) => b.projection - a.projection);
@@ -133,6 +134,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function populateTradeAnalyzer(players) {
         const dropdowns = document.querySelectorAll('.player-dropdown');
         dropdowns.forEach(dropdown => {
+            // Clear existing options before populating
+            dropdown.innerHTML = '<option>Select Player</option>';
             players.forEach(player => {
                 const option = document.createElement('option');
                 option.value = player.id;
@@ -190,6 +193,11 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const resultDiv = document.getElementById('trade-result');
         const diff = Math.abs(totalA - totalB);
+        if (totalA === 0 && totalB === 0) {
+            resultDiv.textContent = '';
+            return;
+        }
+
         if (totalA > totalB) {
             resultDiv.textContent = `Side A wins by ${diff.toFixed(2)} points.`;
             resultDiv.style.color = '#48bb78'; // Green
