@@ -1,0 +1,185 @@
+{
+  "leagueInfo": {
+    "leagueName": "Glass Palace Football",
+    "commissioner": "Kevin",
+    "season": 2025,
+    "platform": "ESPN",
+    "teamCount": 12,
+    "scoringType": "Head to Head Points, Point Per Reception",
+    "teamNames": [
+      "Seeing X's to your O's", "TJ for DPOY", "Show me dem TDs",
+      "To Infinity and Bijan", "Victory Formation", "Hauk-naCUAH",
+      "Both Feet Down", "Ents of the Endzone", "Shobi-Wan Kenobi",
+      "Chase'n Purdy Boys", "Where's my Mooney at!?", "Team Wahl"
+    ]
+  },
+  "financials": {
+    "buyIn": {
+      "amount": 20,
+      "currency": "USD",
+      "paymentDue": "End of Season"
+    },
+    "payoutStructure": {
+      "basedOnTeamCount": 12,
+      "totalPrizePool": 240,
+      "distribution": [
+        { "place": 1, "payout_usd": 120, "additional_prize": "League Champion Trophy" },
+        { "place": 2, "payout_usd": 80, "additional_prize": null },
+        { "place": 3, "payout_usd": 40, "additional_prize": null }
+      ],
+      "note": "This is an *estimated* payout based on the initial email and the updated 12-team count. The total prize pool is likely $240 ($20 x 12). Final distribution should be confirmed with the commissioner."
+    },
+    "lastPlacePenalty": {
+      "penalty": "Name added to the 'Toilet Trophy'.",
+      "description": "A perpetual trophy for the league's last-place finisher."
+    }
+  },
+  "keyScoringFeatures": [
+    {
+      "feature": "Double-Dip Punt Return Yards",
+      "value": "1 point per yard",
+      "description": "This is the most impactful rule. BOTH the individual player (under Miscellaneous) AND the Team D/ST get 1 point per punt return yard. A D/ST that forces many punts and has a good returner is exceptionally valuable."
+    },
+    {
+      "feature": "Superflex (OP Slot)",
+      "value": "1 Offensive Player Utility starter",
+      "description": "The 'OP' slot allows you to start a QB, RB, WR, or TE. This dramatically increases the value of quarterbacks, as most teams will start two per week."
+    },
+    {
+      "feature": "Full PPR & PPFD",
+      "value": "1 point per reception + 1 point per first down",
+      "description": "This is a full Point Per Reception league. Additionally, players get a full point for gaining a first down (passing, rushing, or receiving), heavily favoring high-volume, chain-moving players."
+    },
+    {
+      "feature": "Complex Kicker Scoring",
+      "value": "Points for Attempts and Makes",
+      "description": "Kickers get points for attempts AND makes. A made 45-yd FG is worth 6 points (1 for attempt + 1 for make + 4 for distance). A missed FG is worth 0 points (1 for attempt - 1 for miss)."
+    },
+    {
+      "feature": "Trick Play Bonuses",
+      "value": "1 point per attempt/completion for non-QBs",
+      "description": "RB, WR, and TEs receive 1 point per pass attempt and 1 point per pass completion, making players involved in trick plays unusually valuable."
+    }
+  ],
+  "rosterSettings": {
+    "rosterSize": 17,
+    "totalStarters": 10,
+    "benchSize": 7,
+    "injuredReserveSlots": 1,
+    "startingPositions": {
+      "QB": 1, "RB": 2, "WR": 2, "TE": 1,
+      "FLEX (RB/WR/TE)": 1,
+      "OP (QB/RB/WR/TE)": 1,
+      "D/ST": 1,
+      "K": 1
+    }
+  },
+  "scoringRules": {
+    "passing": [
+      { "stat": "Passing Yards", "points": 0.04 },
+      { "stat": "TD Pass", "points": 4 },
+      { "stat": "Interception Thrown", "points": -2 },
+      { "stat": "Passing First Down", "points": 1 },
+      { "stat": "2pt Passing Conversion", "points": 2 },
+      { "stat": "300-399 yard game", "points": 1 },
+      { "stat": "400+ yard game", "points": 1 },
+      { "stat": "40+ yard TD pass bonus", "points": 1 },
+      { "stat": "50+ yard TD pass bonus", "points": 1 },
+      { "stat": "Pass Attempted (non-QB)", "points": 1, "note": "Applies to RB, WR, TE only." },
+      { "stat": "Pass Completed (non-QB)", "points": 1, "note": "Applies to RB, WR, TE only." }
+    ],
+    "rushing": [
+      { "stat": "Rushing Yards", "points": 0.1 },
+      { "stat": "TD Rush", "points": 6 },
+      { "stat": "Rushing First Down", "points": 1 },
+      { "stat": "2pt Rushing Conversion", "points": 2 },
+      { "stat": "100-199 yard game", "points": 1 },
+      { "stat": "200+ yard game", "points": 1 },
+      { "stat": "40+ yard TD rush bonus", "points": 1 },
+      { "stat": "50+ yard TD rush bonus", "points": 1 }
+    ],
+    "receiving": [
+      { "stat": "Receiving Yards", "points": 0.1 },
+      { "stat": "Reception", "points": 1 },
+      { "stat": "TD Reception", "points": 6 },
+      { "stat": "Receiving First Down", "points": 1 },
+      { "stat": "2pt Receiving Conversion", "points": 2 },
+      { "stat": "100-199 yard receiving game", "points": 1 },
+      { "stat": "200+ yard receiving game", "points": 1 },
+      { "stat": "40+ yard TD rec bonus", "points": 1 },
+      { "stat": "50+ yard TD rec bonus", "points": 1 }
+    ],
+    "kicking": [
+      { "stat": "PAT Made", "points": 2, "note": "1 for attempt + 1 for make" },
+      { "stat": "PAT Missed", "points": 1, "note": "1 for attempt only" },
+      { "stat": "FG Made (0-39 yds)", "points": 5, "note": "1 attempt + 1 make + 3 distance" },
+      { "stat": "FG Made (40-49 yds)", "points": 6, "note": "1 attempt + 1 make + 4 distance" },
+      { "stat": "FG Made (50-59 yds)", "points": 7, "note": "1 attempt + 1 make + 5 distance" },
+      { "stat": "FG Made (60+ yds)", "points": 8, "note": "1 attempt + 1 make + 6 distance" },
+      { "stat": "FG Missed (Any)", "points": 0, "note": "1 for attempt - 1 for miss" }
+    ],
+    "defenseSpecialTeams": [
+      { "stat": "Punt Return Yards", "points": 1 },
+      { "stat": "Any Defensive/ST TD", "points": 6 },
+      { "stat": "Sack", "points": 1 },
+      { "stat": "Interception", "points": 2 },
+      { "stat": "Fumble Recovered", "points": 2 },
+      { "stat": "Fumble Forced", "points": 1 },
+      { "stat": "Safety", "points": 2 },
+      { "stat": "Blocked Kick/Punt", "points": 2 },
+      { "stat": "Stuff", "points": 1 },
+      { "stat": "2pt Return", "points": 2 },
+      { "stat": "Points Allowed (0)", "points": 5 },
+      { "stat": "Points Allowed (1-6)", "points": 4 },
+      { "stat": "Points Allowed (7-13)", "points": 3 },
+      { "stat": "Points Allowed (14-21)", "points": 1 },
+      { "stat": "Points Allowed (22-27)", "points": 1 },
+      { "stat": "Points Allowed (28-34)", "points": -1 },
+      { "stat": "Points Allowed (35-45)", "points": -3 },
+      { "stat": "Points Allowed (46+)", "points": -5 },
+      { "stat": "Yards Allowed (<100)", "points": 5 },
+      { "stat": "Yards Allowed (100-199)", "points": 3 },
+      { "stat": "Yards Allowed (200-299)", "points": 2 },
+      { "stat": "Yards Allowed (300-349)", "points": 1 },
+      { "stat": "Yards Allowed (350-399)", "points": -1 },
+      { "stat": "Yards Allowed (400-449)", "points": -3 },
+      { "stat": "Yards Allowed (450-499)", "points": -5 },
+      { "stat": "Yards Allowed (500+)", "points": -7 }
+    ],
+    "individualPlayer": [
+      { "stat": "Punt Return Yards", "points": 1 },
+      { "stat": "Kickoff/Punt Return TD", "points": 6 },
+      { "stat": "Fumble Lost", "points": -2 }
+    ]
+  },
+  "leagueRules": {
+    "draft": {
+      "type": "Snake",
+      "status": "Not scheduled yet",
+      "pickTimeSeconds": 90,
+      "order": "Randomized One Hour Prior to Draft Time"
+    },
+    "transactions": {
+      "lineupLock": "Individually at Scheduled Gametime",
+      "acquisitionSystem": "Waivers",
+      "waiverPeriod": "1 Day",
+      "waiverOrder": "Reset Each Week to Inverse Order of Standings",
+      "tradeDeadline": "2025-11-26T09:00:00-08:00",
+      "tradeReviewPeriod": "1 Day",
+      "votesToVetoTrade": 3
+    },
+    "seasonStructure": {
+      "regularSeasonWeeks": 14,
+      "playoffTeams": 4,
+      "playoffRoundWeeks": 2,
+      "playoffSchedule": "Round 1: Weeks 15-16. Championship: Weeks 17-18.",
+      "tieBreaker": "No tie breakers for weekly matchups.",
+      "playoffSeedingTieBreaker": "Total Points For"
+    }
+  },
+  "metadata": {
+    "source": "Initial Email from Kevin; Official 'Glass Palace Football' League Settings Page",
+    "generatedAt": "2025-07-28T13:21:02-07:00",
+    "version": "2.0"
+  }
+}

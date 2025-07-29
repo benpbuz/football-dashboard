@@ -1,0 +1,183 @@
+:root {
+    --primary-color: #1a202c;
+    --secondary-color: #2d3748;
+    --font-color: #edf2f7;
+    --accent-color: #4299e1;
+    --border-radius: 8px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--primary-color);
+    color: var(--font-color);
+    margin: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--secondary-color);
+    text-align: center;
+    padding: 1.5rem;
+    border-bottom: 3px solid var(--accent-color);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.dashboard-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem;
+    gap: 1.5rem;
+}
+
+.dashboard-widget {
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    flex-basis: 48%; /* Default for two columns */
+    flex-grow: 1;
+    min-width: 320px;
+}
+
+.large-widget {
+    flex-basis: 100%;
+}
+
+h2 {
+    margin-top: 0;
+    color: var(--accent-color);
+    border-bottom: 1px solid #4a5568;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.disclaimer {
+    font-size: 0.9rem;
+    background-color: #4a5568;
+    padding: 0.5rem;
+    border-radius: 4px;
+    border-left: 3px solid var(--accent-color);
+}
+
+/* Projections Table */
+.table-container {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+#projections-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#projections-table th, #projections-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #4a5568;
+}
+
+#projections-table thead {
+    background-color: #2d3748;
+    position: sticky;
+    top: 0;
+}
+
+#projections-table th.sortable {
+    cursor: pointer;
+}
+
+#projection-search {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    background-color: var(--primary-color);
+    color: var(--font-color);
+    border: 1px solid #4a5568;
+    border-radius: 4px;
+}
+
+/* Trade Analyzer */
+.trade-interface {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.trade-side {
+    flex: 1;
+    min-width: 250px;
+    background-color: var(--primary-color);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+}
+.player-selection {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+.player-dropdown {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: var(--secondary-color);
+    color: var(--font-color);
+    border: 1px solid #4a5568;
+}
+.add-player {
+    padding: 0.5rem 1rem;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.player-list {
+    list-style: none;
+    padding: 0;
+    min-height: 100px;
+}
+.player-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    background-color: #2d3748;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+.remove-player {
+    cursor: pointer;
+    color: #e53e3e;
+    font-weight: bold;
+}
+.total-value {
+    font-weight: bold;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+#trade-result {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #a0aec0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dashboard-widget {
+        flex-basis: 100%;
+    }
+    header h1 {
+        font-size: 1.8rem;
+    }
+}
